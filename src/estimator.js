@@ -25,8 +25,8 @@ const covid19ImpactEstimator = (data) => {
   const impactInfectionsByRequestedTime = impactCurrentlyInfected * (2 ** NormalizeDay);
   // challenge 2
   const casesByRequestedTime = impactInfectionsByRequestedTime * 0.15;
-  const impactHospitalBedsByRequestedTime = (totalHospitalBeds * 0.35) - casesByRequestedTime;
-  if (impactHospitalBedsByRequestedTime > 0){
+  let impactHospitalBedsByRequestedTime = (totalHospitalBeds * 0.35) - casesByRequestedTime;
+  if (impactHospitalBedsByRequestedTime > 0) {
     impactHospitalBedsByRequestedTime = Math.floor(impactHospitalBedsByRequestedTime);
   } else {
     impactHospitalBedsByRequestedTime = Math.ceil(impactHospitalBedsByRequestedTime);
@@ -40,11 +40,11 @@ const covid19ImpactEstimator = (data) => {
   // severe impact estimator
   // challenge 1
   const severeImpactCurrentlyInfected = reportedCases * 50;
-  const severeImpactInfectionsByRequestedTime = severeImpactCurrentlyInfected * (2 ** NormalizeDay);
+  let severeImpactInfectionsByRequestedTime = severeImpactCurrentlyInfected * (2 ** NormalizeDay);
   // challenge 2
   const severeCasesByRequestedTime = severeImpactInfectionsByRequestedTime * 0.15;
   const hospitalBedsByRequestedTime = (totalHospitalBeds * 0.35) - severeCasesByRequestedTime;
-  if (hospitalBedsByRequestedTime > 0){
+  if (hospitalBedsByRequestedTime > 0) {
     hospitalBedsByRequestedTime = Math.floor(hospitalBedsByRequestedTime);
   } else {
     hospitalBedsByRequestedTime = Math.ceil(hospitalBedsByRequestedTime);
