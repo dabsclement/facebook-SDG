@@ -40,10 +40,10 @@ const covid19ImpactEstimator = (data) => {
   // severe impact estimator
   // challenge 1
   const severeImpactCurrentlyInfected = reportedCases * 50;
-  let severeImpactInfectionsByRequestedTime = severeImpactCurrentlyInfected * (2 ** NormalizeDay);
+  const severeImpactInfectionsByRequestedTime = severeImpactCurrentlyInfected * (2 ** NormalizeDay);
   // challenge 2
   const severeCasesByRequestedTime = severeImpactInfectionsByRequestedTime * 0.15;
-  const hospitalBedsByRequestedTime = (totalHospitalBeds * 0.35) - severeCasesByRequestedTime;
+  let hospitalBedsByRequestedTime = (totalHospitalBeds * 0.35) - severeCasesByRequestedTime;
   if (hospitalBedsByRequestedTime > 0) {
     hospitalBedsByRequestedTime = Math.floor(hospitalBedsByRequestedTime);
   } else {
