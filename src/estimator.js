@@ -20,13 +20,13 @@ const covid19ImpactEstimator = (data) => {
     period = timeToElapse * 30;
   }
   // impact estimations
-  // challenge 1 
+  // challenge 1
   const impactCurrentlyInfected = reportedCases * 10;
   const impactInfectionsByRequestedTime = impactCurrentlyInfected * (2 ** NormalizeDay);
   // challenge 2
   const casesByRequestedTime = impactInfectionsByRequestedTime * 0.15;
   const impactHospitalBedsByRequestedTime = (totalHospitalBeds * 0.35) - casesByRequestedTime;
-  //challenge 3
+  // challenge 3
   const impactCasesForICUByRequestedTime = impactInfectionsByRequestedTime * 0.05;
   const impactCasesForVentilatorsByRequestedTime = impactInfectionsByRequestedTime * 0.02;
   const impactDollarsInFlight = impactInfectionsByRequestedTime * region.avgDailyIncomePopulation
@@ -45,7 +45,7 @@ const covid19ImpactEstimator = (data) => {
   const dollarsInFlight = severeImpactInfectionsByRequestedTime * region.avgDailyIncomePopulation
                             * region.avgDailyIncomeInUSD * period;
 
-  // estimation output for impact 
+  // estimation output for impact
   const impact = {
     currentlyInfected: impactCurrentlyInfected,
     infectionsByRequestedTime: impactInfectionsByRequestedTime,
