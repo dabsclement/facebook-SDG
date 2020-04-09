@@ -19,7 +19,7 @@ const covid19ImpactEstimator = (data) => {
     NormalizeDay = Math.floor((timeToElapse * 30) / 3);
     period = timeToElapse * 30;
   }
-  // impact estimations
+  // impact estimator
   // challenge 1
   const impactCurrentlyInfected = reportedCases * 10;
   const impactInfectionsByRequestedTime = impactCurrentlyInfected * (2 ** NormalizeDay);
@@ -32,7 +32,7 @@ const covid19ImpactEstimator = (data) => {
   const impactDollarsInFlight = impactInfectionsByRequestedTime * region.avgDailyIncomePopulation
                                     * region.avgDailyIncomeInUSD * period;
 
-  // severe impact estimations
+  // severe impact estimator
   // challenge 1
   const severeImpactCurrentlyInfected = reportedCases * 50;
   const severeImpactInfectionsByRequestedTime = severeImpactCurrentlyInfected * (2 ** NormalizeDay);
