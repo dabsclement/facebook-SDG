@@ -34,8 +34,8 @@ const covid19ImpactEstimator = (data) => {
   // challenge 3
   const impactCasesForICUByRequestedTime = impactInfectionsByRequestedTime * 0.05;
   const impactCasesForVentilatorsByRequestedTime = impactInfectionsByRequestedTime * 0.02;
-  const impactDollarsInFlight = Math.trunc(impactInfectionsByRequestedTime * 
-    region.avgDailyIncomePopulation * region.avgDailyIncomeInUSD * period);
+  const impactDollarsInFlight = Math.trunc(impactInfectionsByRequestedTime 
+    * region.avgDailyIncomePopulation * region.avgDailyIncomeInUSD * period);
 
   // severe impact estimator
   // challenge 1
