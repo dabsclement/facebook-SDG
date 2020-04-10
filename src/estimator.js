@@ -33,8 +33,8 @@ const covid19ImpactEstimator = (data) => {
   }
   // challenge 3
   const impactCasesForICUByRequestedTime = Math.floor(impactInfectionsByRequestedTime * 0.05);
-  const impactCasesForVentilatorsByRequestedTime =
-  Math.floor(impactInfectionsByRequestedTime * 0.02);
+  const impactCasesForVentilatorsByRequestedTime
+  = Math.floor(impactInfectionsByRequestedTime * 0.02);
   const impactDollarsInFlight = Math.floor((impactInfectionsByRequestedTime
     * region.avgDailyIncomePopulation * region.avgDailyIncomeInUSD) / period);
 
@@ -53,7 +53,8 @@ const covid19ImpactEstimator = (data) => {
   // challenge 3
   const casesForICUByRequestedTime
   = Math.floor(severeImpactInfectionsByRequestedTime * 0.05);
-  const casesForVentilatorsByRequestedTime = Math.floor(severeImpactInfectionsByRequestedTime * 0.02);
+  const casesForVentilatorsByRequestedTime
+  = Math.floor(severeImpactInfectionsByRequestedTime * 0.02);
   const dollarsInFlight = Math.floor((severeImpactInfectionsByRequestedTime
     * region.avgDailyIncomePopulation * region.avgDailyIncomeInUSD) / period);
 
